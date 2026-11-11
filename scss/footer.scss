@@ -1,0 +1,27 @@
+@use 'base' as *;
+
+body { background: $teal; }
+body{overflow: hidden;}
+.contact {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; min-height: 560px;
+  padding: 4rem max(5%, calc((100vw - #{$wrap}) / 2));
+  font-size: .9rem;
+
+  h4 { @include heading; font-size: 1rem; letter-spacing: .25em; margin-bottom: 2rem; }
+  hr { @include eyebrow; margin-bottom: 1rem; }
+  &__info { display: grid; gap: 1.2rem; align-content: start; }
+  &__info span { display: block; }
+}
+.social { display: flex; gap: 1rem; img { width: 24px; height: 24px; } }
+
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-content: start;
+  label { display: grid; gap: .3rem; }
+  .full { grid-column: 1 / -1; }
+  input, textarea { width: 100%; padding: .5rem; font: inherit; background: transparent; border: 2px solid $black; }
+  textarea { min-height: 120px; resize: vertical; }
+  button { @include btn; justify-self: end; grid-column: 1 / -1; }
+}
+
+@media (max-width: 800px) {
+  .contact, .form { grid-template-columns: 1fr; }
+}

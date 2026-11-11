@@ -1,0 +1,20 @@
+$black: #000;
+$white: #fff;
+$teal: #58bac0;
+$wrap: 940px;
+// No web fonts: system stacks only. To use your own font, add a local file and an @font-face here.
+$font-heading: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+$font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: $font-body; color: $black; line-height: 1.7; }
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+@mixin heading { font-family: $font-heading; text-transform: uppercase; letter-spacing: .12em; line-height: 1.2; }
+@mixin btn {
+  display: inline-block; padding: .6rem 1.6rem; font: inherit; cursor: pointer;
+  background: $black; color: $white; border: 2px solid $black;
+}
+@mixin eyebrow { width: 40px; border: 0; border-top: 2px solid $black; margin-bottom: 2rem; }
